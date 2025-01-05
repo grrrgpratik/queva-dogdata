@@ -32,14 +32,14 @@ export function CaloriesForm({ onSubmit, isLoading }: CaloriesFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-lg shadow-md">
+    <form onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition-colors">
       <div>
-        <label htmlFor="collarId" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="collarId" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Collar ID
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <QrCode className="h-5 w-5 text-gray-400" />
+            <QrCode className="h-5 w-5 text-gray-400 dark:text-gray-500" />
           </div>
           <input
             type="text"
@@ -47,19 +47,19 @@ export function CaloriesForm({ onSubmit, isLoading }: CaloriesFormProps) {
             name="collarId"
             value={formData.collarId}
             onChange={handleChange}
-            className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="pl-10 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
             required
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="dogId" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="dogId" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Dog ID
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Dog className="h-5 w-5 text-gray-400" />
+            <Dog className="h-5 w-5 text-gray-400 dark:text-gray-500" />
           </div>
           <input
             type="text"
@@ -67,7 +67,7 @@ export function CaloriesForm({ onSubmit, isLoading }: CaloriesFormProps) {
             name="dogId"
             value={formData.dogId}
             onChange={handleChange}
-            className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="pl-10 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
             required
           />
         </div>
@@ -75,12 +75,12 @@ export function CaloriesForm({ onSubmit, isLoading }: CaloriesFormProps) {
 
       <div className="space-y-4">
         <div>
-          <label htmlFor="startDate" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="startDate" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Start Date
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Calendar className="h-5 w-5 text-gray-400" />
+              <Calendar className="h-5 w-5 text-gray-400 dark:text-gray-500" />
             </div>
             <input
               type="date"
@@ -88,19 +88,19 @@ export function CaloriesForm({ onSubmit, isLoading }: CaloriesFormProps) {
               name="startDate"
               value={formData.startDate}
               onChange={handleChange}
-              className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="pl-10 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
               required
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="endDate" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="endDate" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             End Date
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Calendar className="h-5 w-5 text-gray-400" />
+              <Calendar className="h-5 w-5 text-gray-400 dark:text-gray-500" />
             </div>
             <input
               type="date"
@@ -108,7 +108,7 @@ export function CaloriesForm({ onSubmit, isLoading }: CaloriesFormProps) {
               name="endDate"
               value={formData.endDate}
               onChange={handleChange}
-              className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="pl-10 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
               required
             />
           </div>
@@ -120,8 +120,8 @@ export function CaloriesForm({ onSubmit, isLoading }: CaloriesFormProps) {
         disabled={isLoading}
         className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white transition-colors
           ${isLoading 
-            ? 'bg-blue-400 cursor-not-allowed' 
-            : 'bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+            ? 'bg-blue-400 dark:bg-blue-500 cursor-not-allowed' 
+            : 'bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-blue-400'
           }`}
       >
         {isLoading ? (

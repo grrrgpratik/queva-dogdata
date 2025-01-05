@@ -21,10 +21,12 @@ export function CaloriesDisplay({ data, isLoading }: CaloriesDisplayProps) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <div className="p-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900">Activity Overview</h2>
-        <p className="text-sm text-gray-600">Daily energy expenditure: {data.rtdee.toFixed(2)} calories</p>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-colors">
+      <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Activity Overview</h2>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          Daily energy expenditure: {data.rtdee.toFixed(2)} calories
+        </p>
       </div>
       
       <div className="p-6 grid gap-6">

@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { DashboardLayout } from './components/layout/DashboardLayout';
 import { AppRoutes } from './routes';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <DashboardLayout>
+      <AuthProvider>
+        <BrowserRouter>
           <Toaster position="top-right" />
           <AppRoutes />
-        </DashboardLayout>
-      </BrowserRouter>
+        </BrowserRouter>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
